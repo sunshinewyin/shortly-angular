@@ -1,6 +1,10 @@
+<h1>add a link</h1>
 <div id='container'>
-<!-- Your code here -->
-<li ng-repeat=""></li>
+  <form name="shortenLink" ng-submit='addLink(link)'>
+    <input type='text' ng-model='link.url'>
+    <button>submit link</button>
+  </form>
+  <h1 ng-model='link.url'></h1>
 </div>
 
 

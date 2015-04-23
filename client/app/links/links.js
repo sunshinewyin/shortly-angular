@@ -4,6 +4,7 @@ angular.module('shortly.links', [])
   $scope.data = {};
   $scope.data.links = [];
   $scope.getLinks = function() {
+    console.log("I GOT CONSOLED BY INIT");
     $http.get('/api/links')
       .success(function(data, status, headers, config){
         $scope.data.links = $scope.data.links.concat(data);
@@ -13,6 +14,6 @@ angular.module('shortly.links', [])
 
       });
     }
-  $scope.getLinks();
-  // Your code here
+  // $scope.getLinks();
+  // ^ that's for the tests
 });
