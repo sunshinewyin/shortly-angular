@@ -1,17 +1,10 @@
 angular.module('shortly.shorten', [])
 
-.controller('ShortenController', function ($scope, $location, Links, $http) {
+.controller('ShortenController', function ($scope, $location, Links) {
   $scope.link = {};
   $scope.link.url = "";
-  $scope.addLink = function(link) {
-    console.log(link)
-    $http.post('/api/links', JSON.stringify(link))
-    .success(function(){
-      $scope.link.url = "";
-    })
-    .error(function(){
-      alert("A wild error appeared!");
-    });
-  }
+
+  $scope.addLink = new Links.addLink;
+  console.log($scope.addLink);
   // Your code here
 });

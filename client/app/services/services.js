@@ -1,7 +1,18 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  // Your code here
+  var addLink = function(link) {
+    return $http.post('/api/links', JSON.stringify(link))
+    .success(function(){
+      $scope.link.url = "";
+    })
+    .error(function(){
+      alert("A wild error appeared!");
+    });
+  }
+  return {
+    addLink: addLink
+  }
 })
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
