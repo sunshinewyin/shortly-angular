@@ -5,7 +5,13 @@ angular.module('shortly.shorten', [])
   $scope.link.url = "";
   $scope.addLink = function(link) {
     console.log(link)
-    $http.post('/api/links', JSON.stringify(link));
+    $http.post('/api/links', JSON.stringify(link))
+    .success(function(){
+      $scope.link.url = "";
+    })
+    .error(function(){
+      alert("A wild error appeared!");
+    });
   }
   // Your code here
 });

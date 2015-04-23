@@ -1,7 +1,8 @@
 <h1>add a link</h1>
+<h5><a href="#/links">see links?</a></h5>
 <div id='container'>
   <form name="shortenLink" ng-submit='addLink(link)'>
-    <input type='text' ng-model='link.url'>
+    <input type='text' ng-model='link.url' type="url" pattern="https?://.+">
     <button>submit link</button>
   </form>
   <h1 ng-model='link.url'></h1>

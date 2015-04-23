@@ -1,13 +1,14 @@
+<h5><a href="#/shorten">Submit A Link</a></h5>
+<input ng-model="searchTerm" placeholder="Enter a search term..."></input>
 <div id='container' ng-init="getLinks()">
   <ul>
-  <li ng-repeat='link in data.links'>
+  <li ng-repeat='link in data.masterLinks | orderBy: "-visits" | filter: searchTerm'>
     <b>{{link.title}}</b>
      (<a href={{link.url}}>{{link.url}}</a>):
      (<a href=/api/links/{{link.code}}>
         {{link.base_url + '/api/links/' + link.code}}
      </a>)
+     <b>{{link.visits}} views</b>
   </li>
   </ul>
 </div>
-
-
