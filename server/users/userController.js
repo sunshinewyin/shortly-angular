@@ -30,6 +30,7 @@ module.exports = {
   },
 
   signup: function (req, res, next) {
+    console.log("greetings from signup!")
     var username  = req.body.username,
         password  = req.body.password,
         create,
